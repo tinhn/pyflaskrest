@@ -1,0 +1,22 @@
+##
+## Import file data into mongodb
+##
+mongoimport -h 127.0.0.1:27017 -d vnedu -c student --type csv --file student.csv --headerline
+mongoimport -h 127.0.0.1:27017 -d vncrm -c customers --type csv --file customers.csv --headerline
+
+##
+## Export mongo data to file 
+##
+mongoexport -h 127.0.0.1:27017 -d vnedu -c student --type=csv --fields 'studenid,firstname,lastname,age,phone,city' --out student_details.csv
+
+##
+## Verify data
+##
+mongo
+use vnedu
+db.student.find().limit(1)
+db.student.distinct( "city" )
+
+# switch to db vncrm
+use vncrm
+db.customers.find().limit(1)

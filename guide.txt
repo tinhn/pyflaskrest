@@ -1,0 +1,89 @@
+
+##
+## Get
+##
+curl -i -X GET 'http://localhost:5000/v1/hs/938845296'
+curl -i -X GET 'http://localhost:5000/v1/hs'
+curl -i -X GET 'http://localhost:5000/v1/hs?city=Delhi'
+
+##
+## Create
+##
+curl -i -X POST \
+   -H "Content-Type:application/json" \
+   -d \
+    '{
+        "studenid": "1",
+        "firstname": "Rajiv",
+        "lastname": "Reddy",
+        "age": "21",
+        "phone": "9848022337",
+        "city": "Hyderabad"
+    }' \
+    'http://localhost:5000/v1/hs'
+
+##
+## Update
+##
+curl -i -X PUT \
+   -H "Content-Type:application/json" \
+   -d \
+    '{
+        "studenid": "1",
+        "firstname": "Rajiv",
+        "lastname": "Reddy",
+        "age": "30",
+        "phone": "9848022337",
+        "city": "Delhi",
+        "id":"5e9e3d0c21f234049007a7c8"
+    }' \
+    'http://localhost:5000/v1/hs'
+
+##
+## Delete 
+##
+curl -i -X DELETE 'http://localhost:5000/v1/hs?id=5e9e3d0c21f234049007a7c8'  
+
+
+##
+## Get
+## 
+curl -i -X GET 'http://localhost:5000/v1/crm'
+curl -i -X GET 'http://localhost:5000/v1/crm/1'
+curl -i -X GET 'http://localhost:5000/v1/crm?age=32'
+
+##
+## Create
+## 
+curl -i -X POST \
+   -H "Content-Type:application/json" \
+   -d \
+    '{
+        "customerid": "1",
+        "name": "Ramesh",
+        "age": "32",
+        "address": "Ahmedabad",
+        "salary": "2000.0"
+    }' \
+    'http://localhost:5000/v1/crm'
+
+##
+## Update
+## 
+curl -i -X PUT \
+   -H "Content-Type:application/json" \
+   -d \
+    '{
+        "customerid": "1",
+        "name": "Ramesh",
+        "age": "32",
+        "address": "Ahmedabad",
+        "salary": "2000.0",
+        "id":"5e9e3d0c21f234049007a456"
+    }' \
+    'http://localhost:5000/v1/crm'    
+
+##
+## Delete 
+##
+curl -i -X DELETE 'http://localhost:5000/v1/crm?id=5e9e3d0c21f234049007a456'  
